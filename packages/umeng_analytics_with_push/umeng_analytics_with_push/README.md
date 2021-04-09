@@ -1,6 +1,8 @@
 # umeng_analytics_with_push
 
 友盟统计 (U-App) 与友盟分析 (U-Push) Flutter Plugin.  
+
+容易集成的友盟分析和Push，集成分析只需两步，集成 Push 再加两步。
   
 ## Usage  
   
