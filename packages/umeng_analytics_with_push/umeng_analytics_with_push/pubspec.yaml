@@ -1,8 +1,7 @@
 name: umeng_analytics_with_push
 description: A new Flutter plugin.
 version: 0.1.0
-author: Dylan
-homepage: https://github.com/wangbo4020/flutter-plugins/umeng_analytics_with_push
+homepage: https://github.com/wangbo4020/flutter-plugins/tree/main/packages/umeng_analytics_with_push/umeng_analytics_with_push
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -13,8 +12,7 @@ dependencies:
     sdk: flutter
 
   flutter_plugin_android_lifecycle: '>=2.0.0 <3.0.0'
-  umeng_analytics_with_push_platform_interface: # 暂未发布，发布后改为在线地址
-    path: ../umeng_analytics_with_push_platform_interface
+  umeng_analytics_with_push_platform_interface: ^0.0.1
 
 dev_dependencies:
   flutter_test:

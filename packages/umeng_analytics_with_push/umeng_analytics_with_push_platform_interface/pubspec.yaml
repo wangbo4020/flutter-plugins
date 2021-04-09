@@ -1,8 +1,7 @@
 name: umeng_analytics_with_push_platform_interface
-description: A new Flutter package project.
+description: A common platform interface for the u-analytics, u-push plugin.
 version: 0.0.1
-author:
-homepage:
+homepage: https://github.com/wangbo4020/flutter-plugins/tree/main/packages/umeng_analytics_with_push/umeng_analytics_with_push
 
 dependencies:
   flutter:

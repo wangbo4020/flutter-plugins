@@ -119,4 +119,3 @@ abstract class UmengAnalyticsWithPushPlatform extends PlatformInterface {
   /// 将之前添加的标签中的一个或多个删除
   Future<void> removeTags(List<String> tags);
 }
-
