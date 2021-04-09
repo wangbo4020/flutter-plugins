@@ -124,7 +124,7 @@ class App: FlutterApplication() {
 
 ## 进阶
 
-#### <p id="vendor">配置厂商 Push 通道配置</p>
+#### <p id="vendor">配置厂商 Push 通道</p>
 
 **厂商配置需要使用者手动添加，需要同时添加厂商通道的依赖并在 AndroidManifest 中配置相应的id才会生效**  
 **配置成功后插件会自动调用厂商Push的初始化**
