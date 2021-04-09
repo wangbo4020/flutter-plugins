@@ -1,0 +1,88 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.auwx.umeng_analytics_with_push_example">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- io.flutter.app.FlutterApplication is an android.app.Application that
+         calls FlutterMain.startInitialization(this); in its onCreate method.
+         In most cases you can leave this as-is, but you if you want to provide
+         additional functionality it is fine to subclass or reimplement
+         FlutterApplication and put your custom class here. -->
+    <application
+        android:name=".App"
+        android:icon="@mipmap/ic_launcher"
+        android:label="UmengAnalyticsWithPushExample"
+        tools:remove="android:allowBackup">
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:launchMode="singleTop"
+            android:theme="@style/LaunchTheme"
+            android:windowSoftInputMode="adjustResize">
+            <!-- Specifies an Android theme to apply to this Activity as soon as
+                 the Android process has started. This theme is visible to the user
+                 while the Flutter UI initializes. After that, this theme continues
+                 to determine the Window background behind the Flutter UI. -->
+            <meta-data
+                android:name="io.flutter.embedding.android.NormalTheme"
+                android:resource="@style/NormalTheme" />
+            <!-- Displays an Android View that continues showing the launch screen
+                 Drawable until Flutter paints its first frame, then this splash
+                 screen fades out. A splash screen is useful to avoid any visual
+                 gap between the end of Android's launch screen and the painting of
+                 Flutter's first frame. -->
+            <meta-data
+                android:name="io.flutter.embedding.android.SplashScreenDrawable"
+                android:resource="@drawable/launch_background" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- Don't delete the meta-data below.
+             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+
+        <!-- ** Umeng Start ** -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5e3f96f3cb23d2a070000048" /> <!-- Channel ID用来标识App的推广渠道，作为推送消息时给用户分组的一个维度。 -->
+        <!-- Under tag is umeng_analysis_with_push plugin define -->
+        <meta-data
+            android:name="UMENG_SECRET"
+            android:value="5e3f96f3cb23d2a0700000485e3f96f3cb23" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Umeng" />
+        <!-- huawei push参数声明 -->
+        <!-- huawei start -->
+        <meta-data
+            android:name="com.huawei.hms.client.appid"
+            android:value="appid=000000000" />
+        <!-- huawei end -->
+        <!--vivo push参数声明 -->
+        <!-- vivo start-->
+        <meta-data
+            android:name="com.vivo.push.app_id"
+            android:value="000000000" />
+        <meta-data
+            android:name="com.vivo.push.api_key"
+            android:value="oooooooooooooooooooooooooooooooo" />
+        <!-- VIVO end-->
+        <!-- XiaoMi start-->
+        <!-- Under tag is umeng_analysis_with_push plugin define -->
+        <!-- 因 Android 会将数字的 meta-data 识别为 Number 类型
+        所以数字形式的 meta-data 请在加前缀 "\ " 或定义到 strings.xml 中以识别为 String -->
+        <meta-data
+            android:name="com.xiaomi.push.app_id"
+            android:value="\ 0000000000000000000" />
+        <meta-data
+            android:name="com.xiaomi.push.app_key"
+            android:value="\ 0000000000000" />
+        <!-- XiaoMi end-->
+        <!-- ** Umeng End ** -->
+    </application>
+</manifest>
