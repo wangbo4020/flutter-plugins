@@ -108,7 +108,7 @@ class App: FlutterApplication() {
         UmengAnalyticsWithPush.preinitial(
             this,
             // AppKey, secret, channel 也可配置在 AndroidManifest 中
-            // Required herer or AndroidManifest.application
+            // Required here or AndroidManifest.application
             //   <meta-data android:name="UMENG_APPKEY" android:value="aaaaaaaaaaaaaaaaaa" />
             //   <meta-data android:name="UMENG_SECRET" android:value="aaaaaaaaaaaaaaaaaa" />
             //   <meta-data android:name="UMENG_CHANNEL" android:value="${CHANNEL}" />
@@ -216,7 +216,7 @@ dependencies {
         <!-- XiaoMi start-->
         <!-- Under tag is umeng_analysis_with_push plugin define -->
         <!-- Android 会将纯数字的 meta-data 识别为 Number 类型
-        所以数字形式的 meta-data 请在加前缀 "\ " 或定义到 strings.xml 中在此处引用以识别为 String -->
+        所有数字形式的 meta-data 请在加前缀 "\ " 或定义到 strings.xml 中在此处引用以识别为 String -->
         <meta-data
             android:name="com.xiaomi.push.app_id"
             android:value="\ 000000000000000000000" />

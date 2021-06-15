@@ -5,7 +5,6 @@ import android.content.Context
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.util.Log
-import anet.channel.util.Utils
 import com.taobao.accs.ACCSClient
 import com.taobao.accs.AccsClientConfig
 import com.taobao.agoo.TaobaoRegister
@@ -151,6 +150,7 @@ object UmengAnalyticsWithPush {
         if (hasXiaomi && xiaomiAppId != null && xiaomiAppKey != null) {
 //        Log.d(TAG, "${context.packageName}/xiaomiAppId: $xiaomiAppId, xiaomiAppKey: $xiaomiAppKey")
             org.android.agoo.xiaomi.MiPushRegistar.register(context, xiaomiAppId.trim(), xiaomiAppKey.trim())
+            if (LOG) Log.i(TAG, "Xiaomi is registered")
         } else if (hasXiaomi) {
             Log.w(TAG, "*****************************************************")
             Log.w(TAG, "* Not found Xiaomi appId, appKey in AndroidManifest *")
@@ -169,6 +169,7 @@ object UmengAnalyticsWithPush {
         if (hasHuawei && hasHuaweiAppId) {
             // huawei 通道
             org.android.agoo.huawei.HuaWeiRegister.register(context as Application)
+            if (LOG) Log.i(TAG, "Huawei is registered")
         } else if (hasHuawei) {
             Log.w(TAG, "*****************************************************")
             Log.w(TAG, "* Not found Huawei appId in AndroidManifest *")
@@ -187,6 +188,7 @@ object UmengAnalyticsWithPush {
         val meizuAppKey = app.metaData.getString("com.meizu.push.app_key")
         if (hasMeizu && meizuAppId != null && meizuAppKey != null) {
             org.android.agoo.mezu.MeizuRegister.register(context, meizuAppId.trim(), meizuAppKey.trim())
+            if (LOG) Log.i(TAG, "Meizu is registered")
         } else if (hasMeizu) {
             Log.w(TAG, "*****************************************************")
             Log.w(TAG, "* Not found Meizu appId in AndroidManifest *")
@@ -206,6 +208,7 @@ object UmengAnalyticsWithPush {
         if (hasVivo && hasVivoAppId && hasVivoApiKey) {
             // vivo 通道
             org.android.agoo.vivo.VivoRegister.register(context)
+            if (LOG) Log.i(TAG, "Vivo is registered")
         } else if (hasVivo) {
             Log.w(TAG, "*****************************************************")
             Log.w(TAG, "* Not found Vivo appId, appKey in AndroidManifest *")
@@ -224,6 +227,7 @@ object UmengAnalyticsWithPush {
         val oppoAppSecret = app.metaData.getString("com.oppo.push.app_secret")
         if (hasOppo && oppoAppKey != null && oppoAppSecret != null) {
             org.android.agoo.oppo.OppoRegister.register(context, oppoAppKey.trim(), oppoAppSecret.trim())
+            if (LOG) Log.i(TAG, "Oppo is registered")
         } else if (hasOppo) {
 
             Log.w(TAG, "*****************************************************")
@@ -270,9 +274,9 @@ object UmengAnalyticsWithPush {
             builder.setAppSecret(getUmengMessageSecret(app))
             builder.setTag(AccsClientConfig.DEFAULT_CONFIGTAG)
             ACCSClient.init(context, builder.build())
-            TaobaoRegister.setAccsConfigTag(Utils.context, AccsClientConfig.DEFAULT_CONFIGTAG)
+            TaobaoRegister.setAccsConfigTag(context, AccsClientConfig.DEFAULT_CONFIGTAG)
         } catch (e: Exception) {
-            e.printStackTrace()
+            if (LOG) Log.w(TAG, "fix garbled code warring", e)
         }
     }
 

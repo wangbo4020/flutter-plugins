@@ -1,3 +1,7 @@
+## 0.1.1+1
+* Add log for Android vendor push registered.
+* Correct typos.
+
 ## 0.1.1
 
 * Pub Points Score
