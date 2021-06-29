@@ -80,7 +80,7 @@ class UmengAnalyticsWithPush {
 
   /// 获取 PushToken
   ///
-  /// 如果从未获取成功，则会从新获取
+  /// 如果从未获取成功，再次调用会重新获取
   static Future<String?> get deviceToken =>
       UmengAnalyticsWithPushPlatform.instance.deviceToken;
 
