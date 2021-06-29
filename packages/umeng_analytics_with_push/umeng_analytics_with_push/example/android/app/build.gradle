@@ -60,17 +60,17 @@ dependencies {
     implementation 'com.umeng.umsdk:crash:0.0.5'
     // Umeng Push 厂商 SDK  https://developer.umeng.com/docs/67966/detail/98589
     // 小米 Push 通道
-    implementation 'com.umeng.umsdk:xiaomi-push:3.8.5'
-    implementation 'com.umeng.umsdk:xiaomi-umengaccs:1.2.1'
+    implementation 'com.umeng.umsdk:xiaomi-push:4.0.2'
+    implementation 'com.umeng.umsdk:xiaomi-umengaccs:1.2.4'
     // 华为 Push 通道
     implementation 'com.huawei.hms:push:5.0.4.302'
-    implementation 'com.umeng.umsdk:huawei-umengaccs:1.3.1'
+    implementation 'com.umeng.umsdk:huawei-umengaccs:1.3.4'
     // Vivo Push 通道
-    implementation 'com.umeng.umsdk:vivo-push:2.9.0'
-    implementation 'com.umeng.umsdk:vivo-umengaccs:1.1.2'
+    implementation 'com.umeng.umsdk:vivo-push:3.0.0'
+    implementation 'com.umeng.umsdk:vivo-umengaccs:1.1.4'
     // Meizu Push 通道
-    implementation 'com.umeng.umsdk:meizu-push:4.0.2'
-    implementation 'com.umeng.umsdk:meizu-umengaccs:1.1.3'
+    implementation 'com.umeng.umsdk:meizu-push:4.0.7'
+    implementation 'com.umeng.umsdk:meizu-umengaccs:1.1.4'
     // Oppo Push 通道
     implementation 'com.umeng.umsdk:oppo-push:2.1.0'
     implementation 'com.umeng.umsdk:oppo-umengaccs:1.0.7-fix'
