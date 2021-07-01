@@ -213,7 +213,7 @@ class UmengAnalyticsWithPushPlugin : FlutterPlugin, MethodCallHandler, ActivityA
                 if (LOG) Log.d(TAG, "onPageChanged: $log")
                 this.currentPage = newPage
             }
-
+            result.success(null)
         } else if (call.method == "onEvent") {
             val event = call.argument<String>("event")!!
             val params = call.argument<Any>("params")

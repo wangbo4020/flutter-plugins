@@ -18,6 +18,7 @@ A new Flutter plugin.
   s.platform = :ios, '8.0'
   s.dependency 'UMCommon'
   s.dependency 'UMDevice'
+  s.dependency 'UMPush'
   s.static_framework = true
 
   # Flutter.framework does not contain a i386 slice.
