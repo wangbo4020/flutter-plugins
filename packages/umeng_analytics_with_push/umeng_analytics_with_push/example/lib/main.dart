@@ -20,6 +20,8 @@ class _MyAppState extends State<MyApp> {
   String _devToken;
   String _tags;
 
+  bool get _hasDeviceToken => _devToken != null && _devToken != "Getting";
+
   @override
   void initState() {
     super.initState();
@@ -37,7 +39,7 @@ class _MyAppState extends State<MyApp> {
         body: ListView(
           padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
           children: [
-            RaisedButton(
+            ElevatedButton(
               onPressed: _initialized
                   ? null
                   : () {
@@ -53,7 +55,7 @@ class _MyAppState extends State<MyApp> {
                     },
               child: Text("Init"),
             ),
-            RaisedButton(
+            ElevatedButton(
               onPressed: () {
                 UmengAnalyticsWithPush.oaid.then((oaid) {
                   setState(() {
@@ -67,7 +69,7 @@ class _MyAppState extends State<MyApp> {
               },
               child: Text("Got OAID"),
             ),
-            RaisedButton(
+            ElevatedButton(
               onPressed: () {
                 UmengAnalyticsWithPush.utdid.then((utdid) {
                   setState(() {
@@ -81,7 +83,7 @@ class _MyAppState extends State<MyApp> {
               },
               child: Text("Got UtdId"),
             ),
-            RaisedButton(
+            ElevatedButton(
               onPressed: !_initialized
                   ? null
                   : () {
@@ -102,63 +104,80 @@ class _MyAppState extends State<MyApp> {
                     },
               child: Text("Got DeviceToken"),
             ),
-            RaisedButton(
-              onPressed: () async {
-                await UmengAnalyticsWithPush.addAlias("token", "flutter");
-                print("addAlias ok");
-              },
+            ElevatedButton(
+              onPressed: !_hasDeviceToken
+                  ? null
+                  : () async {
+                      await UmengAnalyticsWithPush.addAlias("token", "flutter");
+                      print("addAlias ok");
+                    },
               child: Text("AddAlias type=\"token\", alias=\"flutter\""),
             ),
-            RaisedButton(
-              onPressed: () async {
-                await UmengAnalyticsWithPush.putAlias("token", "flutter");
-                print("putAlias ok");
-              },
+            ElevatedButton(
+              onPressed: !_hasDeviceToken
+                  ? null
+                  : () async {
+                      await UmengAnalyticsWithPush.putAlias("token", "flutter");
+                      print("putAlias ok");
+                    },
               child: Text("PutAlias type=\"token\", alias=\"flutter\""),
             ),
-            RaisedButton(
-              onPressed: () async {
-                await UmengAnalyticsWithPush.removeAlias("token", "flutter");
-                print("removeAlias ok");
-              },
+            ElevatedButton(
+              onPressed: !_hasDeviceToken
+                  ? null
+                  : () async {
+                      await UmengAnalyticsWithPush.removeAlias(
+                          "token", "flutter");
+                      print("removeAlias ok");
+                    },
               child: Text("RemoveAlias type=\"token\", alias=\"flutter\""),
             ),
-            RaisedButton(
-              onPressed: () {
-                UmengAnalyticsWithPush.getTags().then((tags) {
-                  print("getTags: $tags");
-                  setState(() {
-                    _tags = tags?.join(", ") ?? "null";
-                  });
-                }).catchError((e, s) {
-                  print("getTags: $e" + (s != null ? "\n$s" : ""));
-                  setState(() {
-                    _tags = e.toString();
-                  });
-                });
-              },
+            ElevatedButton(
+              onPressed: !_hasDeviceToken
+                  ? null
+                  : () {
+                      UmengAnalyticsWithPush.getTags().then((tags) {
+                        print("getTags: $tags");
+                        setState(() {
+                          _tags = tags?.join(", ") ?? "null";
+                        });
+                      }).catchError((e, s) {
+                        print("getTags: $e" + (s != null ? "\n$s" : ""));
+                        setState(() {
+                          _tags = e.toString();
+                        });
+                      });
+                    },
               child: Text("getTags \"flutter_tag1\", \"flutter_tag2\""),
             ),
-            RaisedButton(
-              onPressed: () {
-                UmengAnalyticsWithPush.addTags(
-                    ["flutter_tag1", "flutter_tag2"]);
-              },
+            ElevatedButton(
+              onPressed: !_hasDeviceToken
+                  ? null
+                  : () {
+                      UmengAnalyticsWithPush.addTags(
+                          ["flutter_tag1", "flutter_tag2"]);
+                    },
               child: Text("AddTags \"flutter_tag1\", \"flutter_tag2\""),
             ),
-            RaisedButton(
-              onPressed: () {
-                UmengAnalyticsWithPush.removeTags(
-                    ["flutter_tag1", "flutter_tag2"]);
-              },
+            ElevatedButton(
+              onPressed: !_hasDeviceToken
+                  ? null
+                  : () {
+                      UmengAnalyticsWithPush.removeTags(
+                          ["flutter_tag1", "flutter_tag2"]);
+                    },
               child: Text("RemoveTags \"flutter_tag1\", \"flutter_tag2\""),
             ),
             SizedBox(height: 16),
+            Text(_initialized ? "Initialized!" : "Please click Init"),
+            if (_oaid != null) SizedBox(height: 12),
             if (_oaid != null) SelectableText("OAID: $_oaid"),
-            SizedBox(height: 12),
+            if (_utdid != null) SizedBox(height: 12),
             if (_utdid != null) SelectableText("UTDID: $_utdid"),
             SizedBox(height: 12),
-            if (_devToken != null) SelectableText("DeviceToken: $_devToken"),
+            SelectableText(_devToken == null
+                ? "Please click Got DeviceToken"
+                : "DeviceToken: $_devToken"),
             SizedBox(height: 12),
             if (_tags != null) SelectableText("Tags: $_tags"),
           ],

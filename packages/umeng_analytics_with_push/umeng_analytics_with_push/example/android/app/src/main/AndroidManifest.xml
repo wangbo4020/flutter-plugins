@@ -49,11 +49,11 @@
         <!-- ** Umeng Start ** -->
         <meta-data
             android:name="UMENG_APPKEY"
-            android:value="5e3f96f3cb23d2a070000048" /> <!-- Channel ID用来标识App的推广渠道，作为推送消息时给用户分组的一个维度。 -->
+            android:value="60e2a4688a102159db886a5d" /> <!-- Channel ID用来标识App的推广渠道，作为推送消息时给用户分组的一个维度。 -->
         <!-- Under tag is umeng_analysis_with_push plugin define -->
         <meta-data
             android:name="UMENG_SECRET"
-            android:value="5e3f96f3cb23d2a0700000485e3f96f3cb23" />
+            android:value="b09ecad8e870a9a8d8aa16aacb578a53" />
         <meta-data
             android:name="UMENG_CHANNEL"
             android:value="Umeng" />
