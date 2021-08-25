@@ -1,3 +1,6 @@
+## 0.1.4
+* Upgrade dependencies (umeng push, umeng common, kotlin).
+
 ## 0.1.3
 * Add proguard-rules.pro for Android.
 
