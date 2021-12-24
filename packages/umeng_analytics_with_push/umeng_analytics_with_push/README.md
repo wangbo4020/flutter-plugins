@@ -10,7 +10,7 @@ To use this plugin, add `umeng_analytics_with_push` as a [dependency in your `pu
 For example:  
 ```yaml  
 dependencies:  
-    umeng_analytics_with_push: ^0.1.0
+    umeng_analytics_with_push: ^0.2.0
 ```
 
 #### 该插件已遵循[合规指南](https://developer.umeng.com/docs/67966/detail/207155)
@@ -136,17 +136,17 @@ dependencies {
     // 以下配置请根据需求选择性添加
     // Umeng Push 厂商 SDK  https://developer.umeng.com/docs/67966/detail/98589
     // 小米 Push 通道
-    implementation 'com.umeng.umsdk:xiaomi-push:3.8.5'
-    implementation 'com.umeng.umsdk:xiaomi-umengaccs:1.2.1'
+    implementation 'com.umeng.umsdk:xiaomi-push:4.8.1'
+    implementation 'com.umeng.umsdk:xiaomi-umengaccs:1.2.6'
     // 华为 Push 通道
-    implementation 'com.huawei.hms:push:5.0.4.302'
-    implementation 'com.umeng.umsdk:huawei-umengaccs:1.3.1'
+    implementation 'com.huawei.hms:push:6.1.0.300'
+    implementation 'com.umeng.umsdk:huawei-umengaccs:1.3.6'
     // Vivo Push 通道
-    implementation 'com.umeng.umsdk:vivo-push:2.9.0'
-    implementation 'com.umeng.umsdk:vivo-umengaccs:1.1.2'
+    implementation 'com.umeng.umsdk:vivo-push:3.0.0.3'
+    implementation 'com.umeng.umsdk:vivo-umengaccs:1.1.5'
     // Meizu Push 通道
-    implementation 'com.umeng.umsdk:meizu-push:4.0.2'
-    implementation 'com.umeng.umsdk:meizu-umengaccs:1.1.3'
+    implementation 'com.umeng.umsdk:meizu-push:4.1.4'
+    implementation 'com.umeng.umsdk:meizu-umengaccs:1.1.5'
     // Oppo Push 通道
     implementation 'com.umeng.umsdk:oppo-push:2.1.0'
     implementation 'com.umeng.umsdk:oppo-umengaccs:1.0.7-fix'

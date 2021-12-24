@@ -1,3 +1,6 @@
+## 0.2.0
+* Upgrade dependencies (umeng push, umeng common, kotlin, gradle).
+
 ## 0.1.4
 * Upgrade dependencies (umeng push, umeng common, kotlin).
 

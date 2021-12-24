@@ -28,6 +28,7 @@
 -dontwarn org.apache.thrift.**
 -dontwarn com.xiaomi.**
 -dontwarn com.huawei.**
+-dontwarn com.hianalytics.**
 -dontwarn com.meizu.**
 
 -keepattributes *Annotation*
@@ -38,6 +39,7 @@
 -keep class com.umeng.** {*;}
 -keep class com.xiaomi.** {*;}
 -keep class com.huawei.** {*;}
+-keep class com.hianalytics.** {*;}
 -keep class com.meizu.** {*;}
 -keep class org.apache.thrift.** {*;}
 

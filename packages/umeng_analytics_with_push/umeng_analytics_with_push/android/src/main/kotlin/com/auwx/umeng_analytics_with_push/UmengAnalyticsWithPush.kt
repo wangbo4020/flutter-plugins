@@ -11,8 +11,8 @@ import com.taobao.agoo.TaobaoRegister
 import com.umeng.analytics.MobclickAgent
 import com.umeng.commonsdk.UMConfigure
 import com.umeng.commonsdk.utils.UMUtils
-import com.umeng.message.IUmengRegisterCallback
 import com.umeng.message.PushAgent
+import com.umeng.message.api.UPushRegisterCallback
 
 
 object UmengAnalyticsWithPush {
@@ -26,7 +26,7 @@ object UmengAnalyticsWithPush {
     private var secret: String? = null
 
     private var deviceToken: String? = null
-    private val registerCallbacks = mutableListOf<IUmengRegisterCallback>()
+    private val registerCallbacks = mutableListOf<UPushRegisterCallback>()
 
     /**
      * 预初始化
@@ -114,13 +114,13 @@ object UmengAnalyticsWithPush {
     }
 
     @JvmStatic
-    fun getDeviceToken(context: Context, callback: IUmengRegisterCallback) {
+    fun getDeviceToken(context: Context, callback: UPushRegisterCallback) {
 //        assert(agent.registerCallback == this)
         if (deviceToken != null) {
             callback.onSuccess(deviceToken)
         } else {
             PushAgent.getInstance(context).register(mRegisterCallback)
-            registerCallbacks.add(object : IUmengRegisterCallback {
+            registerCallbacks.add(object : UPushRegisterCallback {
                 override fun onSuccess(p0: String?) {
                     registerCallbacks.remove(this)
                     callback.onSuccess(p0)
@@ -252,7 +252,7 @@ object UmengAnalyticsWithPush {
         ?: info.metaData.getString("UMENG_MESSAGE_SECRET")
     }
 
-    private val mRegisterCallback = object : IUmengRegisterCallback {
+    private val mRegisterCallback = object : UPushRegisterCallback {
         override fun onSuccess(deviceToken: String) {
             if (LOG) Log.d(TAG, "onSuccess: $deviceToken")
             this@UmengAnalyticsWithPush.deviceToken = deviceToken

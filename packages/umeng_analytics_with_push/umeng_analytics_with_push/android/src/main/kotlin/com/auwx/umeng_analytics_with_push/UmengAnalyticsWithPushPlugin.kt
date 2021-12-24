@@ -11,8 +11,8 @@ import androidx.lifecycle.OnLifecycleEvent
 import com.umeng.analytics.MobclickAgent
 import com.umeng.commonsdk.UMConfigure
 import com.umeng.commonsdk.statistics.common.DeviceConfig
-import com.umeng.message.IUmengRegisterCallback
 import com.umeng.message.PushAgent
+import com.umeng.message.api.UPushRegisterCallback
 import com.ut.device.UTDevice
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
@@ -167,7 +167,7 @@ class UmengAnalyticsWithPushPlugin : FlutterPlugin, MethodCallHandler, ActivityA
                 }
             }, *array)
         } else if (call.method == "deviceToken") {
-            UmengAnalyticsWithPush.getDeviceToken(context, object : IUmengRegisterCallback {
+            UmengAnalyticsWithPush.getDeviceToken(context, object : UPushRegisterCallback {
                 override fun onSuccess(deviceToken: String) {
 
                     handler.post { result.success(deviceToken) }
