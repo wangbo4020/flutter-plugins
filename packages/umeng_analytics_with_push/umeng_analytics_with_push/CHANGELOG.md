@@ -1,3 +1,7 @@
+## 0.2.0+1
+* Pub Points.
+* \[Android\] Replace deprecated to new api.
+
 ## 0.2.0
 * Upgrade dependencies (umeng push, umeng common, kotlin, gradle).
 
