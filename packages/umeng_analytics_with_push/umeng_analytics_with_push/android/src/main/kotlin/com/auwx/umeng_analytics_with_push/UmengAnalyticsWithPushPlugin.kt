@@ -3,6 +3,7 @@ package com.auwx.umeng_analytics_with_push
 import android.app.Activity
 import android.content.Context
 import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import androidx.annotation.NonNull
 import androidx.lifecycle.Lifecycle
@@ -45,7 +46,7 @@ class UmengAnalyticsWithPushPlugin : FlutterPlugin, MethodCallHandler, ActivityA
     override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
         if (LOG) Log.d(TAG, "onAttachedToEngine: ")
         context = flutterPluginBinding.applicationContext
-        handler = Handler(/*Looper.getMainLooper()*/)
+        handler = Handler(Looper.getMainLooper())
 
         channel = MethodChannel(flutterPluginBinding.binaryMessenger, "com.auwx.plugins/umeng_analytics_with_push")
         channel.setMethodCallHandler(this)
