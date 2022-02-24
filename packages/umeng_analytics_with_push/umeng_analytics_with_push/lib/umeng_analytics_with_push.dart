@@ -54,7 +54,7 @@ class UmengAnalyticsWithPush {
   /// params support [String], [Map]
   ///
   /// if params isn't Map, will ignore counter
-  static Future<void> onEvent(String event, [dynamic? params, int? counter]) =>
+  static Future<void> onEvent(String event, [dynamic params, int? counter]) =>
       UmengAnalyticsWithPushPlatform.instance.onEvent(event, params, counter);
 
   /// 页面进入前台
