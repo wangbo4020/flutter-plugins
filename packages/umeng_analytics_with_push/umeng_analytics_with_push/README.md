@@ -136,20 +136,20 @@ dependencies {
     // 以下配置请根据需求选择性添加
     // Umeng Push 厂商 SDK  https://developer.umeng.com/docs/67966/detail/98589
     // 小米 Push 通道
-    implementation 'com.umeng.umsdk:xiaomi-push:4.9.1'
-    implementation 'com.umeng.umsdk:xiaomi-umengaccs:1.2.8'
+    implementation 'com.umeng.umsdk:xiaomi-push:5.6.2'
+    implementation 'com.umeng.umsdk:xiaomi-umengaccs:2.0.0'
     // 华为 Push 通道
-    implementation 'com.huawei.hms:push:6.1.0.300'
-    implementation 'com.umeng.umsdk:huawei-umengaccs:1.3.6'
+    implementation 'com.huawei.hms:push:6.9.0.300'
+    implementation 'com.umeng.umsdk:huawei-umengaccs:2.0.0'
     // Vivo Push 通道
     implementation 'com.umeng.umsdk:vivo-push:3.0.0.4'
-    implementation 'com.umeng.umsdk:vivo-umengaccs:1.1.6'
+    implementation 'com.umeng.umsdk:vivo-umengaccs:2.0.0'
     // Meizu Push 通道
-    implementation 'com.umeng.umsdk:meizu-push:4.1.4'
-    implementation 'com.umeng.umsdk:meizu-umengaccs:1.1.5'
+    implementation 'com.umeng.umsdk:meizu-push:4.2.3'
+    implementation 'com.umeng.umsdk:meizu-umengaccs:2.0.0'
     // Oppo Push 通道
-    implementation 'com.umeng.umsdk:oppo-push:3.0.0'
-    implementation 'com.umeng.umsdk:oppo-umengaccs:1.0.8-fix'
+    implementation 'com.umeng.umsdk:oppo-push:3.1.0'
+    implementation 'com.umeng.umsdk:oppo-umengaccs:2.0.0'
 }
 ```
 * 华为Push还需添加额外依赖，请参考[此处链接](https://developer.umeng.com/docs/67966/detail/98589#h2--push-sdk12) 完成配置

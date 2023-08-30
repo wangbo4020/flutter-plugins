@@ -134,7 +134,7 @@ class UmengAnalyticsWithPushPlugin : FlutterPlugin, MethodCallHandler, ActivityA
                     if (isSuccess) {
                         result.success(null)
                     } else {
-                        result.error("AddTagsError", ret.errors, ret.msg)
+                        result.error("AddTagsError", ret.errors, "")
                     }
                 }
             }, *array)
@@ -163,7 +163,7 @@ class UmengAnalyticsWithPushPlugin : FlutterPlugin, MethodCallHandler, ActivityA
                     if (isSuccess) {
                         result.success(null)
                     } else {
-                        result.error("RemoveTagsError", ret.errors, ret.msg)
+                        result.error("RemoveTagsError", ret.errors, "")
                     }
                 }
             }, *array)

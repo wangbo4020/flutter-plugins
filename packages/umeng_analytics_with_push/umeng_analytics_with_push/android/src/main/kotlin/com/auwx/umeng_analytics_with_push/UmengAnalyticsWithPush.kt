@@ -168,7 +168,7 @@ object UmengAnalyticsWithPush {
         val hasHuaweiAppId = app.metaData.containsKey("com.huawei.hms.client.appid")
         if (hasHuawei && hasHuaweiAppId) {
             // huawei 通道
-            org.android.agoo.huawei.HuaWeiRegister.register(context as Application)
+            org.android.agoo.huawei.HuaWeiRegister.register(context)
             if (LOG) Log.i(TAG, "Huawei is registered")
         } else if (hasHuawei) {
             Log.w(TAG, "*****************************************************")
