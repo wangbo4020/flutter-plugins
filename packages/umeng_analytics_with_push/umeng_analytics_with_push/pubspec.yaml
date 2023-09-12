@@ -1,6 +1,6 @@
 name: umeng_analytics_with_push
 description: Flutter plugin for usage U-App and U-Push of umeng, integrate so easy.
-version: 0.2.1
+version: 0.2.2
 homepage: https://github.com/wangbo4020/flutter-plugins/tree/main/packages/umeng_analytics_with_push/umeng_analytics_with_push
 
 environment:

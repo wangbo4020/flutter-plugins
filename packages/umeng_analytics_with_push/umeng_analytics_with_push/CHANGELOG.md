@@ -1,3 +1,6 @@
+## 0.2.2
+* Upgrade dependencies (umeng push, umeng common).
+
 ## 0.2.1
 * Pub Points.
 * Upgrade dependencies (umeng push, umeng common).

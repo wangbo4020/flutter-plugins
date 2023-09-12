@@ -10,7 +10,7 @@ To use this plugin, add `umeng_analytics_with_push` as a [dependency in your `pu
 For example:  
 ```yaml  
 dependencies:  
-    umeng_analytics_with_push: ^0.2.1
+    umeng_analytics_with_push: ^0.2.2
 ```
 
 #### 该插件已遵循[合规指南](https://developer.umeng.com/docs/67966/detail/207155)
